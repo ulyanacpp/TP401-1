@@ -1,0 +1,17 @@
+<!-- notes/templates/notes/note_list.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1>Заметки</h1>
+<a href="{% url 'note_new' %}">Новая заметка</a>
+<ul>
+    {% for note in notes %}
+    <li>
+        <a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a>
+        <a href="{% url 'note_edit' note.pk %}">Редактировать</a>
+        <a href="{% url 'note_delete' note.pk %}">Удолить</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

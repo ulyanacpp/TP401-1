@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>{% block title %}Notes{% endblock %}</title>
+</head>
+<body>
+<nav>
+    <ul>
+        {% if user.is_authenticated %}
+            <li>Dobre!, {{ user.username }}!</li>
+            <li>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Выйти</button>
+                </form>
+            </li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Зайти</a></li>
+            <li><a href="{% url 'signup' %}">Зарегаца</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
