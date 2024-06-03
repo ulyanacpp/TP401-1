@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'notesapp',
     'django.contrib.staticfiles',
 ]
 
@@ -84,6 +85,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+LOGOUT_REDIRECT_URL = '/'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
